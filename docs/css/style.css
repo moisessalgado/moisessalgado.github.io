@@ -36,16 +36,19 @@ body {
 }
 
 .skip-link {
-  position: absolute;
-  left: 0.8rem;
-  top: -48px;
+  position: fixed;
+  left: 50%;
+  top: -64px;
+  transform: translateX(-50%);
   background: #ffffff;
   color: var(--ink);
   padding: 0.55rem 0.8rem;
   border-radius: 10px;
   border: 1px solid var(--line);
   text-decoration: none;
-  z-index: 3;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: top 180ms ease;
 }
 
 .skip-link:focus {
