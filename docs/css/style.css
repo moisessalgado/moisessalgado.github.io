@@ -294,15 +294,56 @@ h3 {
 }
 
 .quote-item {
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1rem;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)) padding-box,
+    linear-gradient(130deg, rgba(0, 87, 255, 0.35), rgba(30, 160, 139, 0.25)) border-box;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 1.05rem 1.05rem 0.95rem;
   margin-top: 0.8rem;
+  position: relative;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.quote-item::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.2rem;
+  right: 0.8rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: rgba(0, 87, 255, 0.2);
+}
+
+.quote-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(18, 32, 47, 0.1);
 }
 
 .quote-item p {
   margin: 0.3rem 0;
+}
+
+.quote-source {
+  margin-top: 0.8rem !important;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.quote-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+@media (min-width: 900px) {
+  .quote-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quote-grid .quote-item:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 a {
