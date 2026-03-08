@@ -14,6 +14,11 @@ Static bilingual personal website (PT/EN) focused on professional profile and Li
 - `docs/css/style.css` - visual system and responsive styles
 - `docs/js/main.js` - lightweight interactions
 - `docs/CNAME` - custom domain (`moisessalgado.com.br`)
+- `docs/robots.txt` - crawler directives
+- `docs/sitemap.xml` - search engine sitemap (PT/EN)
+- `docs/site.webmanifest` - web app metadata
+- `docs/assets/favicon.svg` - site icon
+- `docs/assets/og-card.svg` - social sharing image
 
 ## Local Preview
 
@@ -51,3 +56,8 @@ Edit only:
 - `docs/en/index.html`
 
 No build or dependency install is required.
+
+## SEO Checks
+
+- Validate Open Graph tags using social debuggers after each major change.
+- Submit `https://moisessalgado.com.br/sitemap.xml` to Google Search Console.

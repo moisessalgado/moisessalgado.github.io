@@ -35,6 +35,23 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: absolute;
+  left: 0.8rem;
+  top: -48px;
+  background: #ffffff;
+  color: var(--ink);
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  z-index: 3;
+}
+
+.skip-link:focus {
+  top: 0.8rem;
+}
+
 .aurora {
   position: fixed;
   border-radius: 999px;
@@ -292,6 +309,19 @@ button:focus-visible {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (max-width: 860px) {
