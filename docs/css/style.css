@@ -293,6 +293,18 @@ h3 {
   margin: 0.45rem 0;
 }
 
+.quote-item {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  margin-top: 0.8rem;
+}
+
+.quote-item p {
+  margin: 0.3rem 0;
+}
+
 a {
   color: var(--primary);
 }
@@ -339,6 +351,7 @@ button:focus-visible {
     border-radius: 18px;
     flex-wrap: wrap;
     justify-content: center;
+    top: 0.45rem;
   }
 
   .site-header nav {
