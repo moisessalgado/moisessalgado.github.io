@@ -1,0 +1,55 @@
+---
+import Base from "../layouts/Base.astro";
+import PostCard from "../components/PostCard.astro";
+import { getPosts, TEMAS } from "../lib/posts";
+
+const recent = (await getPosts()).slice(0, 3);
+---
+
+<Base
+  title="Moises Salgado | Sensoriamento remoto, geoprocessamento e ideias"
+  description="Site pessoal de Moises Salgado: consultor em sensoriamento remoto e geoprocessamento, escrevendo sobre filosofia, história, tecnologia e curiosidades."
+  alt="/en/"
+>
+  <section class="hero container reveal">
+    <p class="eyebrow">Sensoriamento remoto · Geoprocessamento · Ideias</p>
+    <h1>Moises Salgado</h1>
+    <p class="lead">
+      Trabalho com dados de satélite e território. Aqui escrevo também sobre o que me interessa fora do trabalho:
+      filosofia, história, tecnologia e curiosidades.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/escritos">Ler os escritos</a>
+      <a class="btn btn-ghost" href="/sobre">Sobre mim</a>
+      <a class="btn btn-ghost" href="/consultoria">Consultoria</a>
+    </div>
+  </section>
+
+  <section class="container reveal">
+    <h2>Temas</h2>
+    <nav class="chips" aria-label="Temas">
+      {Object.entries(TEMAS).map(([slug, label]) => <a href={`/temas/${slug}`}>{label}</a>)}
+    </nav>
+  </section>
+
+  <section class="container stack">
+    <h2>Últimos escritos</h2>
+    {
+      recent.length ? (
+        recent.map((p) => <PostCard id={p.id} {...p.data} />)
+      ) : (
+        <p class="empty">Os primeiros textos chegam em breve.</p>
+      )
+    }
+    <p><a href="/escritos">Ver todos os escritos →</a></p>
+  </section>
+
+  <section class="container card reveal">
+    <h2>Trabalho</h2>
+    <p>
+      Fundei a Coordenada Geo, consultoria em inteligência geoespacial e climática. Antes, fui co-fundador e CTO da Agrosatélite,
+      adquirida pela Serasa Experian em 2023.
+    </p>
+    <p><a href="/consultoria">Ver credenciais e contato →</a></p>
+  </section>
+</Base>

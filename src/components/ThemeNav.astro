@@ -1,0 +1,11 @@
+---
+import { TEMAS } from "../lib/posts";
+const { current } = Astro.props as { current?: string };
+---
+
+<nav class="chips theme-nav" aria-label="Temas">
+  <a href="/escritos" aria-current={!current ? "page" : undefined}>Todos</a>
+  {Object.entries(TEMAS).map(([slug, label]) => (
+    <a href={`/temas/${slug}`} aria-current={current === slug ? "page" : undefined}>{label}</a>
+  ))}
+</nav>

@@ -1,63 +1,50 @@
-# Moises Salgado - Personal Website
+# moisessalgado.com.br
 
-Static bilingual personal website (PT/EN) focused on professional profile and LinkedIn CV.
+Personal website of Moises Salgado, built with [Astro](https://astro.build) and Markdown, deployed to GitHub Pages.
 
-## Stack
+## Develop
 
-- HTML/CSS/JavaScript (no build step)
-- GitHub Pages (`main` branch + `/docs` folder)
+```bash
+npm install
+npm run dev      # http://localhost:4321 (drafts are visible)
+npm run build    # outputs to dist/
+npm run preview
+```
+
+## Writing a post
+
+Create `src/content/blog/my-post.md`:
+
+```md
+---
+title: "Title"
+description: "One-line summary"
+date: 2026-11-03
+tema: filosofia   # filosofia | historia | tecnologia | curiosidades
+draft: false      # drafts only show in `npm run dev`
+---
+Text in Markdown.
+```
+
+Projects live in `src/content/projetos/*.md` (`nome`, `url`, `descricao`, `ordem`).
 
 ## Structure
 
-- `docs/index.html` - Portuguese page
-- `docs/en/index.html` - English page
-- `docs/css/style.css` - visual system and responsive styles
-- `docs/js/main.js` - lightweight interactions
-- `docs/CNAME` - custom domain (`moisessalgado.com.br`)
-- `docs/robots.txt` - crawler directives
-- `docs/sitemap.xml` - search engine sitemap (PT/EN)
-- `docs/site.webmanifest` - web app metadata
-- `docs/assets/favicon.svg` - site icon
-- `docs/assets/og-card.svg` - social sharing image
+- `src/pages/` – routes (PT at `/`, institutional EN pages under `/en/`)
+- `src/content/` – blog posts and project entries
+- `src/layouts/Base.astro` – shared head (SEO, hreflang, JSON-LD), nav, footer
+- `public/` – static files, including `CNAME` (custom domain; do not remove)
 
-## Local Preview
+## Deployment
 
-Open `docs/index.html` in the browser.
+GitHub Actions (`.github/workflows/deploy.yml`) builds on every push to `main`.
+In **Settings → Pages**, set **Source** to **GitHub Actions**.
 
-## Deploy on GitHub Pages
+## Shared domain
 
-1. Push repository to GitHub.
-2. Go to `Settings > Pages`.
-3. Set `Source` to `Deploy from a branch`.
-4. Select branch `main` and folder `/docs`.
-5. Save and wait for publication.
+Other repos published with GitHub Pages (e.g. `ospm`) are served at `moisessalgado.com.br/<repo-name>/`.
+Never create a route here with the same name as one of those repos (e.g. `src/pages/ospm`).
 
-## Domain Setup (DNS)
+## DNS
 
-At your DNS provider, configure:
-
-- `A` record for root domain (`@`) pointing to GitHub Pages IPs:
-  - `185.199.108.153`
-  - `185.199.109.153`
-  - `185.199.110.153`
-  - `185.199.111.153`
-- `CNAME` record for `www` pointing to `moisessalgado.com.br`
-
-After DNS propagation:
-
-1. In `Settings > Pages`, confirm `Custom domain: moisessalgado.com.br`.
-2. Enable `Enforce HTTPS`.
-
-## Content Updates
-
-Edit only:
-
-- `docs/index.html`
-- `docs/en/index.html`
-
-No build or dependency install is required.
-
-## SEO Checks
-
-- Validate Open Graph tags using social debuggers after each major change.
-- Submit `https://moisessalgado.com.br/sitemap.xml` to Google Search Console.
+Four `A` records for the GitHub Pages IPs (185.199.108.153, .109.153, .110.153, .111.153) and a `www` CNAME pointing to the root domain.

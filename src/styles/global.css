@@ -415,3 +415,124 @@ button:focus-visible {
     padding: 1rem;
   }
 }
+
+/* ---- Blog, projects, prose ---- */
+.site-header nav a[aria-current="page"] {
+  color: var(--primary);
+}
+
+.site-footer a {
+  color: var(--ink-soft);
+}
+
+.chips a {
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.76);
+  padding: 0.42rem 0.72rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.chips a[aria-current="page"] {
+  background: linear-gradient(130deg, var(--primary), #2b78ff);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.page-title {
+  padding: 3rem 0 0.4rem;
+}
+
+.page-title h1 {
+  max-width: none;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.stack > * + * {
+  margin-top: 1rem;
+}
+
+.post-card h3 a,
+.project-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.post-card h3 a:hover,
+.project-card h3 a:hover {
+  color: var(--primary);
+}
+
+.post-card p,
+.project-card p {
+  margin: 0.4rem 0 0;
+}
+
+.tag {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tag-draft {
+  color: var(--accent);
+  margin-left: 0.4rem;
+}
+
+.theme-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+@media (min-width: 760px) {
+  .theme-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.prose {
+  max-width: 68ch;
+  margin-inline: auto;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+}
+
+.prose p,
+.prose li {
+  font-size: 1.04rem;
+}
+
+.prose blockquote {
+  margin: 1.2rem 0;
+  padding: 0.2rem 1rem;
+  border-left: 3px solid var(--mint);
+  color: var(--ink-soft);
+}
+
+.prose pre {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #12202f;
+  color: #e8f0ff;
+  font-size: 0.9rem;
+}
+
+.prose code {
+  font-size: 0.92em;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.empty {
+  color: var(--ink-soft);
+}

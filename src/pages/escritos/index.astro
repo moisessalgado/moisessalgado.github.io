@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import PostCard from "../../components/PostCard.astro";
+import ThemeNav from "../../components/ThemeNav.astro";
+import { getPosts } from "../../lib/posts";
+
+const posts = await getPosts();
+---
+
+<Base title="Escritos | Moises Salgado" description="Textos sobre filosofia, história, tecnologia e curiosidades.">
+  <header class="container page-title">
+    <p class="eyebrow">Escritos</p>
+    <h1>Escritos</h1>
+  </header>
+  <div class="container"><ThemeNav /></div>
+  <section class="container stack">
+    {posts.length ? posts.map((p) => <PostCard id={p.id} {...p.data} />) : <p class="empty">Os primeiros textos chegam em breve.</p>}
+  </section>
+</Base>

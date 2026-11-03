@@ -1,0 +1,16 @@
+---
+import { TEMAS, fmtDate, type Tema } from "../lib/posts";
+const { id, title, description, date, tema, draft } = Astro.props as {
+  id: string; title: string; description: string; date: Date; tema: Tema; draft?: boolean;
+};
+---
+
+<article class="card post-card reveal">
+  <p class="timeline-meta">
+    <a href={`/temas/${tema}`} class="tag">{TEMAS[tema]}</a>
+    · <time datetime={date.toISOString()}>{fmtDate(date)}</time>
+    {draft && <span class="tag tag-draft">rascunho</span>}
+  </p>
+  <h3><a href={`/escritos/${id}`}>{title}</a></h3>
+  <p>{description}</p>
+</article>
