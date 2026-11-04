@@ -1,16 +1,10 @@
 {
   "name": "Moises Salgado",
   "short_name": "MS",
-  "description": "Geospatial and Climate Intelligence Advisory",
+  "description": "Sensoriamento remoto, geoprocessamento e ideias",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f4efe6",
-  "theme_color": "#0057ff",
-  "icons": [
-    {
-      "src": "/assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ]
+  "background_color": "#E5DBC0",
+  "theme_color": "#012034",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
 }

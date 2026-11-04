@@ -1,7 +1,11 @@
+node_modules/
+.next/
+out/
+.env*.local
+.DS_Store
+*.log
 .vscode/
 *.Zone.Identifier
 LinkedIn_Profile.pdf
 Profile (3).pdf
-node_modules/
-dist/
-.astro/
+next-env.d.ts
