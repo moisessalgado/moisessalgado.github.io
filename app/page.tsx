@@ -1,10 +1,9 @@
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import PageShell from '@/components/PageShell';
 import Section from '@/components/Section';
 import Button from '@/components/Button';
 import PostCard from '@/components/PostCard';
-import { TEMAS, getPosts } from '@/lib/blog';
+import { getPosts } from '@/lib/blog';
 import { SITE } from '@/lib/site';
 
 export default function Home() {
@@ -14,41 +13,25 @@ export default function Home() {
       <section className="bg-paper-light transition-colors duration-300 dark:bg-ink-800">
         <div className="container-x py-14 sm:py-20 lg:py-28">
           <div className="max-w-3xl">
-            <p className="eyebrow">Sensoriamento remoto · Geoprocessamento · Ideias</p>
+            <p className="eyebrow">Pindamonhangaba · Florianópolis</p>
             <h1 className="heading-xl mt-3">Moises Salgado</h1>
             <p className="mt-5 text-lg text-ink-400 dark:text-paper-light/90">
-              Trabalho com dados de satélite e território. Aqui escrevo também sobre o que me interessa fora do trabalho:
-              filosofia, história, tecnologia e curiosidades.
+              Pindamonhangabense, pai de família e observador das coisas da vida. Este é o meu caderno público: textos, ideias e
+              curiosidades.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/escritos/" variant="primary">
-                Ler os escritos <ArrowRight className="h-4 w-4" />
+              <Button href="/blog/" variant="primary">
+                Ler o blog <ArrowRight className="h-4 w-4" />
               </Button>
               <Button href="/sobre/" variant="secondary">Sobre mim</Button>
-              <Button href="/consultoria/" variant="ghost">Consultoria</Button>
+              <Button href="/profissional/" variant="ghost">Profissional</Button>
             </div>
           </div>
         </div>
       </section>
 
       <Section tone="light">
-        <p className="eyebrow">Temas</p>
-        <h2 className="heading-md mt-3">Sobre o que escrevo</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {Object.entries(TEMAS).map(([slug, label]) => (
-            <Link
-              key={slug}
-              href={`/temas/${slug}/`}
-              className="rounded-2xl border border-ink/10 bg-white p-6 font-display text-lg font-bold text-ink shadow-sm transition hover:text-ink hover:shadow-md dark:border-white/15 dark:bg-white/[0.06] dark:text-paper-light dark:hover:text-paper-light"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      </Section>
-
-      <Section tone="paper">
-        <p className="eyebrow">Escritos</p>
+        <p className="eyebrow">Blog</p>
         <h2 className="heading-md mt-3">Últimos textos</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {recent.length ? (
@@ -61,16 +44,17 @@ export default function Home() {
 
       <Section tone="ink">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-paper-light">Trabalho</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-300">Trabalho</p>
           <h2 className="mt-3 font-display text-3xl font-bold text-white">Coordenada Geo</h2>
           <p className="mt-4 text-ink-100">
             Fundei a {SITE.company.name}, consultoria em inteligência geoespacial e climática. Antes, fui co-fundador e CTO da
             Agrosatélite, adquirida pela Serasa Experian em 2023.
           </p>
-          <div className="mt-6">
-            <Button href="/consultoria/" variant="onDark">
-              Ver credenciais e contato <ArrowRight className="h-4 w-4" />
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button href="/profissional/" variant="onDark">
+              Minha trajetória profissional <ArrowRight className="h-4 w-4" />
             </Button>
+            <Button href={SITE.company.url} variant="onDark">coordenadageo.com.br</Button>
           </div>
         </div>
       </Section>

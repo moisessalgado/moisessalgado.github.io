@@ -19,19 +19,16 @@ export default function Sobre() {
         <PageTitle eyebrow="Sobre" title="Olá, eu sou o Moisés" />
         <div className="mt-8 max-w-3xl space-y-5 text-base leading-[1.8]">
           <p>
-            Sou agrônomo de formação e passei a maior parte da carreira transformando imagens de satélite e dados territoriais em
-            ferramentas de decisão. Moro em Florianópolis.
+            Sou pindamonhangabense, pai de família e observador das coisas da vida. Agrônomo de formação, passei a maior parte da
+            carreira transformando imagens de satélite e dados territoriais em ferramentas de decisão. Moro em Florianópolis.
           </p>
           <p>
-            Comecei em 2008 num laboratório de geoprocessamento, passei pelo INPE e pela Funcate, e em 2013 co-fundei a
-            Agrosatélite, onde fui CTO por mais de dez anos. Lá, ajudei a criar as metodologias de culturas agrícolas e florestas
-            plantadas do MapBiomas e coordenei a infraestrutura de dados do inventário LULUCF da Quarta Comunicação Nacional do
-            Brasil ao UNFCCC. Em 2023 a empresa foi adquirida pela Serasa Experian, onde liderei desenvolvimento de produto até 2025.
+            Minha carreira começou em geoprocessamento, em 2008. Co-fundei a Agrosatélite, adquirida pela Serasa Experian em
+            2023, e hoje atuo como consultor pela <a className={link} href={SITE.company.url} target="_blank" rel="noopener noreferrer">Coordenada Geo</a>.
+            Os detalhes estão em <a className={link} href="/profissional/">Profissional</a>.
           </p>
           <p>
-            Hoje atuo como consultor pela <a className={link} href={SITE.company.url} target="_blank" rel="noopener noreferrer">Coordenada Geo</a> e
-            uso este espaço para o que não cabe num currículo: leituras, ideias e experimentos em filosofia, história, tecnologia
-            e outras curiosidades.
+            Este espaço é para o que não cabe num currículo: o que leio, penso e observo por aí.
           </p>
           <p>
             O histórico completo está no <a className={link} href={SITE.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>.

@@ -4,7 +4,6 @@ import Button from './Button';
 import LocaleSwitcher from './LocaleSwitcher';
 import ThemeToggle from './ThemeToggle';
 import { DesktopNav, MobileNav, type NavGroup } from './NavMenu';
-import { TEMAS } from '@/lib/blog';
 import { SITE, type Locale } from '@/lib/site';
 
 export default function Header({ locale, alt }: { locale: Locale; alt?: { pt: string; en: string } }) {
@@ -12,22 +11,13 @@ export default function Header({ locale, alt }: { locale: Locale; alt?: { pt: st
   const groups: NavGroup[] = pt
     ? [
         { label: 'Sobre', href: '/sobre/' },
-        { label: 'Consultoria', href: '/consultoria/' },
-        {
-          label: 'Escritos',
-          href: '/escritos/',
-          items: [
-            { label: 'Todos', href: '/escritos/' },
-            ...Object.entries(TEMAS).map(([slug, label]) => ({ label, href: `/temas/${slug}/` })),
-          ],
-        },
-        { label: 'Projetos', href: '/projetos/' },
+        { label: 'Profissional', href: '/profissional/' },
+        { label: 'Blog', href: '/blog/' },
       ]
     : [
         { label: 'About', href: '/en/about/' },
-        { label: 'Consulting', href: '/en/consulting/' },
-        { label: 'Writing (PT)', href: '/escritos/' },
-        { label: 'Projects (PT)', href: '/projetos/' },
+        { label: 'Professional', href: '/en/professional/' },
+        { label: 'Blog (PT)', href: '/blog/' },
       ];
   const cta = { href: `mailto:${SITE.contact.email}`, label: pt ? 'Contato' : 'Contact' };
 

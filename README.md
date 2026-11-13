@@ -12,7 +12,7 @@ Components copied from there: `Button`, `Card`, `Section`, `ThemeProvider`, `The
 - Markdown posts via `gray-matter` + `next-mdx-remote`
 - Fonts: Comfortaa (display) and Urbanist (text); light/dark theme via `next-themes`
 - Palette: `ink` (black to gray) and `paper` (white to light gray) in `tailwind.config.ts`; there is no accent color
-- Portuguese at the root (`/`), English only for institutional pages (`/en/`)
+- Portuguese at the root (`/`), English only for institutional pages (`/en/`: home, about, professional)
 
 ## Develop
 
@@ -33,20 +33,19 @@ Create `content/blog/my-post.md`:
 title: "Title"
 excerpt: "One-line summary"
 date: "2026-11-03"        # quoted, YYYY-MM-DD
-tema: filosofia           # filosofia | historia | tecnologia | curiosidades
+tags: [optional, list]    # optional; shown on the post page
 draft: false              # drafts only show in `npm run dev`
 ---
 Text in Markdown.
 ```
 
-At least one published (non-draft) post must exist, otherwise the static export fails.
-Projects live in `content/projetos/*.md` (`nome`, `url`, `descricao`, `ordem`).
+There are no categories for now. At least one published (non-draft) post must exist, otherwise the static export fails.
 
 ## Structure
 
-- `app/` routes: `/`, `sobre`, `consultoria`, `projetos`, `escritos`, `temas/[tema]`, `en/*`, `rss.xml`
-- `components/` shared UI; `lib/` site data, blog and project readers
-- `content/` posts and projects
+- `app/` routes: `/`, `sobre`, `profissional`, `blog`, `blog/[slug]`, `en/*`, `rss.xml`
+- `components/` shared UI; `lib/` site data and blog reader
+- `content/` posts
 - `public/` static files, including `CNAME` (custom domain)
 - `brand/` logo source (`olho_A.png`) and `og.html` (Open Graph image source)
 

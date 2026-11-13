@@ -4,9 +4,9 @@ import PageShell from '@/components/PageShell';
 import Button from '@/components/Button';
 
 export const metadata: Metadata = {
-  title: 'Remote sensing, geoprocessing and ideas',
+  title: 'Texts, ideas and curiosities',
   description:
-    'Personal site of Moises Salgado: remote sensing and geoprocessing consultant, writing about philosophy, history, technology and curiosities.',
+    "Personal site of Moises Salgado: from Pindamonhangaba, a family man and observer of life's little things. Texts, ideas and curiosities (mostly in Portuguese).",
   alternates: { canonical: '/en/', languages: { 'pt-BR': '/', en: '/en/' } },
 };
 
@@ -16,16 +16,16 @@ export default function HomeEn() {
       <section className="bg-paper-light dark:bg-ink-800">
         <div className="container-x py-14 sm:py-20 lg:py-28">
           <div className="max-w-3xl">
-            <p className="eyebrow">Remote sensing · Geoprocessing · Ideas</p>
+            <p className="eyebrow">Pindamonhangaba · Florianópolis</p>
             <h1 className="heading-xl mt-3">Moises Salgado</h1>
             <p className="mt-5 text-lg text-ink-400 dark:text-paper-light/90">
-              I work with satellite and territorial data. This site is also where I write about what interests me beyond work:
-              philosophy, history, technology and curiosities (mostly in Portuguese).
+              From Pindamonhangaba, a family man and observer of life&apos;s little things. This is my public notebook: texts,
+              ideas and curiosities (mostly in Portuguese).
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/en/consulting/" variant="primary">Consulting <ArrowRight className="h-4 w-4" /></Button>
-              <Button href="/en/about/" variant="secondary">About me</Button>
-              <Button href="/escritos/" variant="ghost">Writing (PT)</Button>
+              <Button href="/en/about/" variant="primary">About me <ArrowRight className="h-4 w-4" /></Button>
+              <Button href="/en/professional/" variant="secondary">Professional</Button>
+              <Button href="/blog/" variant="ghost">Blog (PT)</Button>
             </div>
           </div>
         </div>

@@ -28,16 +28,15 @@ export default function Footer() {
             <span className="font-display text-base font-bold">Moises Salgado</span>
           </span>
           <p className="max-w-sm text-sm text-ink-100">
-            Sensoriamento remoto, geoprocessamento e ideias sobre filosofia, história, tecnologia e curiosidades.
+            Pindamonhangabense, pai de família e observador das coisas da vida.
           </p>
         </div>
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-300">Navegar</h4>
           <ul className="mt-3 space-y-2 text-sm text-ink-100">
             <li><Link href="/sobre/" className="hover:text-white">Sobre</Link></li>
-            <li><Link href="/consultoria/" className="hover:text-white">Consultoria</Link></li>
-            <li><Link href="/escritos/" className="hover:text-white">Escritos</Link></li>
-            <li><Link href="/projetos/" className="hover:text-white">Projetos</Link></li>
+            <li><Link href="/profissional/" className="hover:text-white">Profissional</Link></li>
+            <li><Link href="/blog/" className="hover:text-white">Blog</Link></li>
             <li><Link href="/en/" className="hover:text-white">English</Link></li>
           </ul>
         </div>

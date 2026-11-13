@@ -41,7 +41,7 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'Moises Salgado | Sensoriamento remoto, geoprocessamento e ideias',
+    default: 'Moises Salgado | Textos, ideias e curiosidades',
     template: '%s | Moises Salgado',
   },
   description: SITE.description,

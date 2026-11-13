@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 import PageShell from '@/components/PageShell';
 import Section from '@/components/Section';
 import { mdxComponents } from '@/components/MDXComponents';
-import { TEMAS, formatDate, getPost, getPosts } from '@/lib/blog';
+import { formatDate, getPost, getPosts } from '@/lib/blog';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: `/escritos/${slug}/` },
+    alternates: { canonical: `/blog/${slug}/` },
     openGraph: { type: 'article', publishedTime: post.date },
   };
 }
@@ -36,23 +36,26 @@ export default async function PostPage({ params }: Params) {
       <Section tone="light">
         <div className="mx-auto max-w-3xl">
           <Link
-            href="/escritos/"
-            className="text-xs font-semibold uppercase tracking-[0.2em] text-ink hover:text-ink-600 dark:text-paper-light"
+            href="/blog/"
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-400 hover:text-ink dark:text-ink-200 dark:hover:text-paper-light"
           >
-            ← Todos os escritos
+            ← Blog
           </Link>
           <header className="mt-8 border-b border-ink/10 pb-8 dark:border-paper-light/10">
-            <Link
-              href={`/temas/${post.tema}/`}
-              className="mb-5 inline-block rounded-full bg-paper-light px-3 py-1 text-xs font-medium text-ink-700 dark:bg-ink-700 dark:text-paper-light"
-            >
-              {TEMAS[post.tema]}
-            </Link>
             <h1 className="heading-lg">{post.title}</h1>
             {post.excerpt ? <p className="mt-5 text-lg leading-relaxed text-ink-400 dark:text-paper-light/80">{post.excerpt}</p> : null}
             <p className="mt-6 text-sm text-ink-400 dark:text-paper-light/60">
               Publicado em <time dateTime={post.date}>{formatDate(post.date)}</time>
             </p>
+            {post.tags.length ? (
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <li key={tag} className="rounded-full bg-paper-light px-3 py-1 text-xs font-medium text-ink-700 dark:bg-ink-700 dark:text-paper-light">
+                    #{tag}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </header>
           <article className="mt-4">
             <MDXRemote source={post.content} components={mdxComponents} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
