@@ -11,8 +11,8 @@ export default function ThemeNav({ current }: { current?: string }) {
       className={clsx(
         'rounded-full px-4 py-1.5 text-sm font-semibold transition',
         active
-          ? 'bg-terracota text-white dark:bg-terracota-light'
-          : 'bg-white text-ink ring-1 ring-inset ring-ink/15 hover:bg-sand-light dark:bg-white/5 dark:text-sand-light dark:ring-white/15 dark:hover:bg-white/10',
+          ? 'bg-ink text-white dark:bg-paper-light dark:text-ink'
+          : 'bg-white text-ink ring-1 ring-inset ring-ink/15 hover:bg-paper-light dark:bg-white/5 dark:text-paper-light dark:ring-white/15 dark:hover:bg-white/10',
       )}
     >
       {label}

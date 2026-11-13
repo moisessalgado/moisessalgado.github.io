@@ -11,12 +11,12 @@ export default function Home() {
   const recent = getPosts().slice(0, 3);
   return (
     <PageShell alt={{ pt: '/', en: '/en/' }}>
-      <section className="bg-sand-light transition-colors duration-300 dark:bg-ink-800">
+      <section className="bg-paper-light transition-colors duration-300 dark:bg-ink-800">
         <div className="container-x py-14 sm:py-20 lg:py-28">
           <div className="max-w-3xl">
             <p className="eyebrow">Sensoriamento remoto · Geoprocessamento · Ideias</p>
             <h1 className="heading-xl mt-3">Moises Salgado</h1>
-            <p className="mt-5 text-lg text-ink-400 dark:text-sand-light/90">
+            <p className="mt-5 text-lg text-ink-400 dark:text-paper-light/90">
               Trabalho com dados de satélite e território. Aqui escrevo também sobre o que me interessa fora do trabalho:
               filosofia, história, tecnologia e curiosidades.
             </p>
@@ -39,7 +39,7 @@ export default function Home() {
             <Link
               key={slug}
               href={`/temas/${slug}/`}
-              className="rounded-2xl border border-ink/10 bg-white p-6 font-display text-lg font-bold text-ink shadow-sm transition hover:text-terracota hover:shadow-md dark:border-white/15 dark:bg-white/[0.06] dark:text-sand-light dark:hover:text-ocre"
+              className="rounded-2xl border border-ink/10 bg-white p-6 font-display text-lg font-bold text-ink shadow-sm transition hover:text-ink hover:shadow-md dark:border-white/15 dark:bg-white/[0.06] dark:text-paper-light dark:hover:text-paper-light"
             >
               {label}
             </Link>
@@ -47,21 +47,21 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section tone="paper">
         <p className="eyebrow">Escritos</p>
         <h2 className="heading-md mt-3">Últimos textos</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {recent.length ? (
             recent.map((p) => <PostCard key={p.slug} post={p} />)
           ) : (
-            <p className="text-ink-400 dark:text-sand-light/80">Os primeiros textos chegam em breve.</p>
+            <p className="text-ink-400 dark:text-paper-light/80">Os primeiros textos chegam em breve.</p>
           )}
         </div>
       </Section>
 
       <Section tone="ink">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocre">Trabalho</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-paper-light">Trabalho</p>
           <h2 className="mt-3 font-display text-3xl font-bold text-white">Coordenada Geo</h2>
           <p className="mt-4 text-ink-100">
             Fundei a {SITE.company.name}, consultoria em inteligência geoespacial e climática. Antes, fui co-fundador e CTO da

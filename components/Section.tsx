@@ -10,13 +10,12 @@ export default function Section({
   id?: string;
   className?: string;
   children: ReactNode;
-  tone?: 'light' | 'sand' | 'moss' | 'ink';
+  tone?: 'light' | 'paper' | 'ink';
 }) {
   const tones = {
-    light: 'bg-white text-ink-700 dark:bg-ink dark:text-sand-light',
-    sand: 'bg-sand-light text-ink-700 dark:bg-ink-700 dark:text-sand-light',
-    moss: 'bg-moss-50 text-ink-700 dark:bg-moss-800 dark:text-sand-light',
-    ink: 'bg-ink text-white dark:bg-ink-900 dark:text-sand-light',
+    light: 'bg-white text-ink-700 dark:bg-ink dark:text-paper-light',
+    paper: 'bg-paper-light text-ink-700 dark:bg-ink-700 dark:text-paper-light',
+    ink: 'bg-ink text-white dark:bg-ink-900 dark:text-paper-light',
   } as const;
   return (
     <section

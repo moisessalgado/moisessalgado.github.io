@@ -29,8 +29,8 @@ export default function Card({
           className={clsx(
             'flex h-10 w-10 items-center justify-center rounded-xl',
             tone === 'light'
-              ? 'bg-ocre/15 text-terracota dark:bg-ocre/20 dark:text-ocre'
-              : 'bg-ocre/20 text-ocre',
+              ? 'bg-ink/5 text-ink dark:bg-white/10 dark:text-paper-light'
+              : 'bg-white/10 text-paper-light',
           )}
         >
           {icon}
@@ -39,7 +39,7 @@ export default function Card({
       <h3
         className={clsx(
           'font-display text-lg font-bold',
-          tone === 'light' ? 'text-ink dark:text-sand-light' : 'text-white',
+          tone === 'light' ? 'text-ink dark:text-paper-light' : 'text-white',
         )}
       >
         {title}
@@ -47,7 +47,7 @@ export default function Card({
       <p
         className={clsx(
           'text-sm leading-relaxed',
-          tone === 'light' ? 'text-ink-400 dark:text-sand-light/90' : 'text-ink-100',
+          tone === 'light' ? 'text-ink-400 dark:text-paper-light/90' : 'text-ink-100',
         )}
       >
         {body}

@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 export default function HomeEn() {
   return (
     <PageShell locale="en" alt={{ pt: '/', en: '/en/' }}>
-      <section className="bg-sand-light dark:bg-ink-800">
+      <section className="bg-paper-light dark:bg-ink-800">
         <div className="container-x py-14 sm:py-20 lg:py-28">
           <div className="max-w-3xl">
             <p className="eyebrow">Remote sensing · Geoprocessing · Ideas</p>
             <h1 className="heading-xl mt-3">Moises Salgado</h1>
-            <p className="mt-5 text-lg text-ink-400 dark:text-sand-light/90">
+            <p className="mt-5 text-lg text-ink-400 dark:text-paper-light/90">
               I work with satellite and territorial data. This site is also where I write about what interests me beyond work:
               philosophy, history, technology and curiosities (mostly in Portuguese).
             </p>

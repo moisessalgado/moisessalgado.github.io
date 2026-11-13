@@ -22,8 +22,8 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#E5DBC0' },
-    { media: '(prefers-color-scheme: dark)', color: '#012034' },
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A0A0A' },
   ],
 };
 
@@ -47,20 +47,23 @@ export const metadata: Metadata = {
   description: SITE.description,
   alternates: { types: { 'application/rss+xml': '/rss.xml' } },
   manifest: '/site.webmanifest',
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [{ url: '/favicon.ico', sizes: 'any' }, { url: '/icon-192.png', type: 'image/png', sizes: '192x192' }],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     siteName: SITE.name,
     locale: 'pt_BR',
-    images: [{ url: '/og-card.svg', width: 1200, height: 630 }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
-  twitter: { card: 'summary_large_image', images: ['/og-card.svg'] },
+  twitter: { card: 'summary_large_image', images: ['/og-default.png'] },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning className={`${sans.variable} ${display.variable}`}>
-      <body className="min-h-screen bg-white font-sans text-ink-700 dark:bg-ink-900 dark:text-sand-light">
+      <body className="min-h-screen bg-white font-sans text-ink-700 dark:bg-ink-900 dark:text-paper-light">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">

@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss';
 
-// Paleta oficial do Manual de Marca (Coordenada Geo), pagina 21.
 const config: Config = {
   darkMode: 'class',
   content: [
@@ -11,57 +10,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Paleta preto e branco: poucos tons de cinza neutro.
         ink: {
-          DEFAULT: '#012034',
-          50: '#E6EBEF',
-          100: '#BFCCD5',
-          200: '#8FA5B3',
-          300: '#5E7E92',
-          400: '#2E5671',
-          500: '#012034',
-          600: '#011A2A',
-          700: '#011521',
-          800: '#000F18',
-          900: '#00070C',
+          DEFAULT: '#0A0A0A',
+          50: '#F5F5F5',
+          100: '#E5E5E5',
+          200: '#BDBDBD',
+          300: '#8A8A8A',
+          400: '#5F5F5F',
+          500: '#0A0A0A',
+          600: '#111111',
+          700: '#171717',
+          800: '#1F1F1F',
+          900: '#000000',
         },
-        moss: {
-          DEFAULT: '#698461',
-          50: '#EFF3ED',
-          100: '#D4DED1',
-          200: '#AFC0AA',
-          300: '#89A282',
-          400: '#698461',
-          500: '#577053',
-          600: '#465A43',
-          700: '#354334',
-          800: '#242D24',
-          900: '#141814',
+        paper: {
+          DEFAULT: '#E5E5E5',
+          light: '#F5F5F5',
+          dark: '#BDBDBD',
         },
-        ocre: {
-          DEFAULT: '#D99856',
-          50: '#FBF2E7',
-          100: '#F4DDBE',
-          200: '#EAC08D',
-          300: '#E0AA6F',
-          400: '#D99856',
-          500: '#C07E3A',
-          600: '#9A6530',
-          700: '#744C25',
-          800: '#4F331A',
-          900: '#29190D',
-        },
-        terracota: {
-          DEFAULT: '#B03E19',
-          light: '#D4633E',
-          dark: '#8A2F11',
-        },
-        sand: {
-          DEFAULT: '#E5DBC0',
-          light: '#F2EBDA',
-          dark: '#C9BA94',
-        },
-        graphite: '#1D1D1D',
-        mist: '#AFAFAF',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

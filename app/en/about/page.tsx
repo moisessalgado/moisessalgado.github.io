@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/en/about/', languages: { 'pt-BR': '/sobre/', en: '/en/about/' } },
 };
 
-const link = 'font-medium text-terracota underline underline-offset-4 hover:text-terracota-dark dark:text-ocre';
+const link = 'font-medium text-ink underline underline-offset-4 hover:text-ink-600 dark:text-paper-light';
 
 export default function About() {
   return (

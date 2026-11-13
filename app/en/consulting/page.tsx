@@ -42,9 +42,9 @@ export default function Consulting() {
           ))}
         </div>
       </Section>
-      <Section tone="sand">
+      <Section tone="paper">
         <h2 className="heading-md">Credentials</h2>
-        <ul className="mt-6 max-w-3xl list-disc space-y-2 pl-5 marker:text-terracota dark:marker:text-ocre">
+        <ul className="mt-6 max-w-3xl list-disc space-y-2 pl-5 marker:text-ink dark:marker:text-paper-light">
           {credentials.map((c) => <li key={c}>{c}</li>)}
         </ul>
         <div className="mt-8 flex flex-wrap gap-3">

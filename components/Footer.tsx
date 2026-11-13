@@ -13,17 +13,18 @@ export default function Footer() {
         <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/2 bg-gradient-to-r from-ink/90 via-ink/50 to-transparent dark:from-ink-900/90 dark:via-ink-900/50 md:block" />
         <div className="container-x pointer-events-none relative flex h-full items-end pb-8 md:items-center md:pb-0">
           <div className="max-w-xs">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ocre">Onde estou</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-300">Onde estou</p>
             <p className="mt-3 font-display text-3xl font-bold text-white md:text-4xl">Florianópolis</p>
             <p className="mt-1 text-sm text-ink-100">{SITE.contact.city}</p>
-            <p className="mt-4 text-xs tabular-nums tracking-[0.15em] text-ocre/80">27°35′43″S · 48°32′53″W</p>
+            <p className="mt-4 text-xs tabular-nums tracking-[0.15em] text-ink-300">27°35′43″S · 48°32′53″W</p>
           </div>
         </div>
       </div>
       <div className="container-x grid gap-10 py-14 md:grid-cols-4">
         <div className="space-y-4 md:col-span-2">
-          <span className="inline-flex items-center gap-2.5">
-            <span aria-hidden className="flex h-9 w-9 items-center justify-center rounded-xl bg-ocre font-display text-sm font-bold text-ink">MS</span>
+          <span className="inline-flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/brand/logo-branco.png" alt="" width={720} height={538} className="h-8 w-auto" />
             <span className="font-display text-base font-bold">Moises Salgado</span>
           </span>
           <p className="max-w-sm text-sm text-ink-100">
@@ -31,7 +32,7 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-ocre">Navegar</h4>
+          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-300">Navegar</h4>
           <ul className="mt-3 space-y-2 text-sm text-ink-100">
             <li><Link href="/sobre/" className="hover:text-white">Sobre</Link></li>
             <li><Link href="/consultoria/" className="hover:text-white">Consultoria</Link></li>
@@ -41,7 +42,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-ocre">Conectar</h4>
+          <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-300">Conectar</h4>
           <ul className="mt-3 space-y-2 text-sm text-ink-100">
             <li><a href={`mailto:${SITE.contact.email}`} className="hover:text-white">E-mail</a></li>
             <li><a href={SITE.contact.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn</a></li>

@@ -24,10 +24,10 @@ export default function Projetos() {
                 href={p.url}
                 className="group flex h-full flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-white/15 dark:bg-white/[0.06]"
               >
-                <h2 className="font-display text-xl font-bold text-ink group-hover:text-terracota dark:text-sand-light dark:group-hover:text-ocre">
+                <h2 className="font-display text-xl font-bold text-ink group-hover:text-ink dark:text-paper-light dark:group-hover:text-paper-light">
                   {p.nome}
                 </h2>
-                <p className="text-sm text-ink-400 dark:text-sand-light/80">{p.descricao}</p>
+                <p className="text-sm text-ink-400 dark:text-paper-light/80">{p.descricao}</p>
               </a>
             ))
           ) : (

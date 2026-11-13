@@ -6,17 +6,17 @@ import type { StyleSpecification } from 'maplibre-gl';
 // Florianópolis-SC
 const PIN: [number, number] = [-48.548, -27.5954];
 
-// Paleta da marca (tailwind.config.ts)
+// Tons de cinza (tailwind.config.ts)
 const C = {
-  water: '#011521', // ink-700: o mar, mais escuro, se funde ao fundo do rodapé
-  land: '#0c3450',
-  green: '#0e3953',
-  building: '#134262',
-  roadMinor: '#174a6a',
-  roadMajor: '#245a7c',
-  motorway: '#3a6d8f',
-  label: '#8fa5b3',
-  labelStrong: '#bfccd5',
+  water: '#050505', // o mar, mais escuro, se funde ao fundo do rodapé
+  land: '#161616',
+  green: '#1b1b1b',
+  building: '#242424',
+  roadMinor: '#2e2e2e',
+  roadMajor: '#454545',
+  motorway: '#5f5f5f',
+  label: '#8a8a8a',
+  labelStrong: '#d0d0d0',
 };
 
 /** Estilo vetorial mínimo, desenhado para a marca (técnica "snazzy"). */

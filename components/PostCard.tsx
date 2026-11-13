@@ -7,14 +7,14 @@ export default function PostCard({ post }: { post: PostMeta }) {
       href={`/escritos/${post.slug}/`}
       className="group flex h-full flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-white/15 dark:bg-white/[0.06]"
     >
-      <p className="text-xs font-semibold uppercase tracking-widest text-terracota dark:text-ocre">
+      <p className="text-xs font-semibold uppercase tracking-widest text-ink dark:text-paper-light">
         {TEMAS[post.tema]} · <time dateTime={post.date}>{formatDate(post.date, { day: '2-digit', month: 'short', year: 'numeric' })}</time>
-        {post.draft ? <span className="ml-2 rounded-full bg-ocre/20 px-2 py-0.5 text-[10px]">rascunho</span> : null}
+        {post.draft ? <span className="ml-2 rounded-full bg-paper-light/20 px-2 py-0.5 text-[10px]">rascunho</span> : null}
       </p>
-      <h2 className="font-display text-xl font-bold text-ink group-hover:text-terracota dark:text-sand-light dark:group-hover:text-ocre">
+      <h2 className="font-display text-xl font-bold text-ink group-hover:text-ink dark:text-paper-light dark:group-hover:text-paper-light">
         {post.title}
       </h2>
-      <p className="text-sm text-ink-400 dark:text-sand-light/80">{post.excerpt}</p>
+      <p className="text-sm text-ink-400 dark:text-paper-light/80">{post.excerpt}</p>
     </Link>
   );
 }
