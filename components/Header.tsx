@@ -10,11 +10,13 @@ export default function Header({ locale, alt }: { locale: Locale; alt?: { pt: st
   const pt = locale === 'pt';
   const groups: NavGroup[] = pt
     ? [
+        { label: 'Home', href: '/' },
         { label: 'Sobre', href: '/sobre/' },
         { label: 'Profissional', href: '/profissional/' },
         { label: 'Blog', href: '/blog/' },
       ]
     : [
+        { label: 'Home', href: '/en/' },
         { label: 'About', href: '/en/about/' },
         { label: 'Professional', href: '/en/professional/' },
         { label: 'Blog (PT)', href: '/blog/' },

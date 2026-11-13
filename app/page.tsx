@@ -10,7 +10,7 @@ export default function Home() {
   const recent = getPosts().slice(0, 3);
   return (
     <PageShell alt={{ pt: '/', en: '/en/' }}>
-      <section className="bg-paper-light transition-colors duration-300 dark:bg-ink-800">
+      <section className="bg-white transition-colors duration-300 dark:bg-ink">
         <div className="container-x py-14 sm:py-20 lg:py-28">
           <div className="max-w-3xl">
             <p className="eyebrow">Pindamonhangaba · Florianópolis</p>
@@ -30,18 +30,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Section tone="light">
-        <p className="eyebrow">Blog</p>
-        <h2 className="heading-md mt-3">Últimos textos</h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {recent.length ? (
-            recent.map((p) => <PostCard key={p.slug} post={p} />)
-          ) : (
-            <p className="text-ink-400 dark:text-paper-light/80">Os primeiros textos chegam em breve.</p>
-          )}
-        </div>
-      </Section>
-
       <Section tone="ink">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-300">Trabalho</p>
@@ -56,6 +44,18 @@ export default function Home() {
             </Button>
             <Button href={SITE.company.url} variant="onDark">coordenadageo.com.br</Button>
           </div>
+        </div>
+      </Section>
+
+      <Section tone="light">
+        <p className="eyebrow">Blog</p>
+        <h2 className="heading-md mt-3">Últimos textos</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {recent.length ? (
+            recent.map((p) => <PostCard key={p.slug} post={p} />)
+          ) : (
+            <p className="text-ink-400 dark:text-paper-light/80">Os primeiros textos chegam em breve.</p>
+          )}
         </div>
       </Section>
     </PageShell>
