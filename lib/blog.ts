@@ -2,21 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
-export const TEMAS = {
-  filosofia: 'Filosofia',
-  historia: 'História',
-  tecnologia: 'Tecnologia',
-  curiosidades: 'Curiosidades',
-} as const;
-
-export type Tema = keyof typeof TEMAS;
-
 export type PostMeta = {
   slug: string;
   title: string;
   excerpt: string;
   date: string;
-  tema: Tema;
+  tags: string[];
   draft: boolean;
 };
 
@@ -31,15 +22,12 @@ function readFile(file: string): Post {
   const raw = fs.readFileSync(path.join(DIR, file), 'utf8');
   const { data, content } = matter(raw);
   const slug = file.replace(/\.(md|mdx)$/, '');
-  if (!(data.tema in TEMAS)) {
-    throw new Error(`Post "${slug}": tema inválido "${data.tema}". Use: ${Object.keys(TEMAS).join(', ')}`);
-  }
   return {
     slug,
     title: String(data.title ?? slug),
     excerpt: String(data.excerpt ?? ''),
     date: data.date instanceof Date ? data.date.toISOString().slice(0, 10) : String(data.date),
-    tema: data.tema as Tema,
+    tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
     draft: data.draft === true,
     content,
   };
@@ -54,11 +42,10 @@ function readAll(): Post[] {
     .filter((p) => showDrafts || !p.draft);
 }
 
-export function getPosts(tema?: Tema): PostMeta[] {
+export function getPosts(): PostMeta[] {
   return readAll()
-    .filter((p) => !tema || p.tema === tema)
     .map((p): PostMeta => ({
-      slug: p.slug, title: p.title, excerpt: p.excerpt, date: p.date, tema: p.tema, draft: p.draft,
+      slug: p.slug, title: p.title, excerpt: p.excerpt, date: p.date, tags: p.tags, draft: p.draft,
     }))
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }

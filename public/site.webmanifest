@@ -1,10 +1,13 @@
 {
   "name": "Moises Salgado",
   "short_name": "MS",
-  "description": "Sensoriamento remoto, geoprocessamento e ideias",
+  "description": "Textos, ideias e curiosidades",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#E5DBC0",
-  "theme_color": "#012034",
-  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+  "background_color": "#FFFFFF",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
 }

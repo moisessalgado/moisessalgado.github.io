@@ -1,16 +1,18 @@
 # moisessalgado.com.br
 
-Personal website of Moises Salgado. It deliberately shares its stack, palette, fonts and components with the
-[Coordenada Geo site](https://coordenadageo.com.br) (`~/dev/www.coordenadageo.com.br`) so both look and behave the same.
+Personal website of Moises Salgado. It shares its stack, structure, fonts and components with the
+[Coordenada Geo site](https://coordenadageo.com.br) (`~/dev/www.coordenadageo.com.br`), but has its own identity:
+a black and white palette (neutral grays only, light and dark) and the "olho" logo.
 Components copied from there: `Button`, `Card`, `Section`, `ThemeProvider`, `ThemeToggle`, `NavMenu`, `MDXComponents`,
-`FooterMap`, `tailwind.config.ts`, `app/globals.css` and the Pages workflows. Keep fixes in sync by hand.
+`FooterMap` and the Pages workflows. Keep fixes in sync by hand; do not copy its colors.
 
 ## Stack
 
 - Next.js 16 (App Router, `output: 'export'`, static) + TypeScript + Tailwind CSS
 - Markdown posts via `gray-matter` + `next-mdx-remote`
 - Fonts: Comfortaa (display) and Urbanist (text); light/dark theme via `next-themes`
-- Portuguese at the root (`/`), English only for institutional pages (`/en/`)
+- Palette: `ink` (black to gray) and `paper` (white to light gray) in `tailwind.config.ts`; there is no accent color
+- Portuguese at the root (`/`), English only for institutional pages (`/en/`: home, about, professional)
 
 ## Develop
 
@@ -31,21 +33,32 @@ Create `content/blog/my-post.md`:
 title: "Title"
 excerpt: "One-line summary"
 date: "2026-11-03"        # quoted, YYYY-MM-DD
-tema: filosofia           # filosofia | historia | tecnologia | curiosidades
+tags: [optional, list]    # optional; shown on the post page
 draft: false              # drafts only show in `npm run dev`
 ---
 Text in Markdown.
 ```
 
-At least one published (non-draft) post must exist, otherwise the static export fails.
-Projects live in `content/projetos/*.md` (`nome`, `url`, `descricao`, `ordem`).
+There are no categories for now. At least one published (non-draft) post must exist, otherwise the static export fails.
 
 ## Structure
 
-- `app/` routes: `/`, `sobre`, `consultoria`, `projetos`, `escritos`, `temas/[tema]`, `en/*`, `rss.xml`
-- `components/` shared UI; `lib/` site data, blog and project readers
-- `content/` posts and projects
+- `app/` routes: `/`, `sobre`, `profissional`, `blog`, `blog/[slug]`, `en/*`, `rss.xml`
+- `components/` shared UI; `lib/` site data and blog reader
+- `content/` posts
 - `public/` static files, including `CNAME` (custom domain)
+- `brand/` logo source (`olho_A.png`) and `og.html` (Open Graph image source)
+
+## Brand assets
+
+`public/favicon.ico`, `icon-*.png`, `apple-touch-icon.png` and `public/brand/logo-{preto,branco}.png` are generated from
+`brand/olho_A.png`:
+
+```bash
+python3 -I scripts/make-brand.py   # needs Pillow and numpy
+```
+
+`public/og-default.png` is a screenshot of `brand/og.html` (1200x630, headless Chromium).
 
 ## Deployment
 

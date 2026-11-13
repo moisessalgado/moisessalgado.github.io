@@ -63,7 +63,7 @@ function DesktopItem({ group }: { group: NavGroup }) {
     return (
       <Link
         href={group.href ?? '#'}
-        className="inline-flex justify-center rounded-full px-3 py-2 text-sm font-medium text-ink/80 transition hover:bg-ink/5 hover:text-terracota dark:text-sand-light/90 dark:hover:bg-white/5 dark:hover:text-ocre"
+        className="inline-flex justify-center rounded-full px-3 py-2 text-sm font-medium text-ink/80 transition hover:bg-ink/5 hover:text-ink dark:text-paper-light/90 dark:hover:bg-white/5 dark:hover:text-paper-light"
       >
         {group.label}
       </Link>
@@ -93,7 +93,7 @@ function DesktopItem({ group }: { group: NavGroup }) {
         aria-expanded={open}
         aria-controls={menuId}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-ink/80 transition hover:bg-ink/5 hover:text-terracota dark:text-sand-light/90 dark:hover:bg-white/5 dark:hover:text-ocre"
+        className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-ink/80 transition hover:bg-ink/5 hover:text-ink dark:text-paper-light/90 dark:hover:bg-white/5 dark:hover:text-paper-light"
       >
         {group.label}
         <ChevronDown aria-hidden className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
@@ -111,7 +111,7 @@ function DesktopItem({ group }: { group: NavGroup }) {
             href={item.href}
             role="menuitem"
             onClick={() => setOpen(false)}
-            className="block rounded-xl px-3 py-2 text-sm text-ink/80 transition hover:bg-sand-light hover:text-ink dark:text-sand-light/90 dark:hover:bg-white/5 dark:hover:text-sand-light"
+            className="block rounded-xl px-3 py-2 text-sm text-ink/80 transition hover:bg-paper-light hover:text-ink dark:text-paper-light/90 dark:hover:bg-white/5 dark:hover:text-paper-light"
           >
             {item.label}
           </Link>
@@ -148,7 +148,7 @@ export function MobileNav({ groups, ctaHref, ctaLabel }: { groups: NavGroup[]; c
         aria-expanded={open}
         aria-label={open ? 'Fechar menu' : 'Abrir menu'}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 text-ink transition hover:border-terracota hover:text-terracota dark:border-white/15 dark:text-sand-light lg:hidden"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 text-ink transition hover:border-ink hover:text-ink dark:border-white/15 dark:text-paper-light lg:hidden"
       >
         <span className="sr-only">Menu</span>
         <div className="relative h-3 w-4">
@@ -170,12 +170,12 @@ export function MobileNav({ groups, ctaHref, ctaLabel }: { groups: NavGroup[]; c
           <div className="absolute inset-x-0 top-0 flex max-h-svh flex-col bg-white shadow-2xl dark:bg-ink-800">
             {/* sticky drawer header with explicit close button */}
             <div className="flex shrink-0 items-center justify-between border-b border-ink/10 px-6 py-4 dark:border-white/10">
-              <span className="font-display text-base font-bold text-ink dark:text-sand-light">Menu</span>
+              <span className="font-display text-base font-bold text-ink dark:text-paper-light">Menu</span>
               <button
                 type="button"
                 aria-label="Fechar menu"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 text-ink transition hover:border-terracota hover:text-terracota dark:border-white/15 dark:text-sand-light"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 text-ink transition hover:border-ink hover:text-ink dark:border-white/15 dark:text-paper-light"
               >
                 <svg aria-hidden viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-4 w-4">
                   <path strokeLinecap="round" d="M2 2l12 12M14 2L2 14" />
@@ -193,7 +193,7 @@ export function MobileNav({ groups, ctaHref, ctaLabel }: { groups: NavGroup[]; c
                           type="button"
                           aria-expanded={expanded === g.label}
                           onClick={() => setExpanded((v) => (v === g.label ? null : g.label))}
-                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left font-display text-lg font-bold text-ink transition hover:bg-sand-light dark:text-sand-light dark:hover:bg-white/5"
+                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left font-display text-lg font-bold text-ink transition hover:bg-paper-light dark:text-paper-light dark:hover:bg-white/5"
                         >
                           {g.label}
                           <ChevronDown aria-hidden className={`h-4 w-4 transition-transform duration-200 ${expanded === g.label ? 'rotate-180' : ''}`} />
@@ -205,7 +205,7 @@ export function MobileNav({ groups, ctaHref, ctaLabel }: { groups: NavGroup[]; c
                                 <Link
                                   href={it.href}
                                   onClick={() => setOpen(false)}
-                                  className="block rounded-lg px-6 py-2 text-sm text-ink/80 transition hover:bg-sand-light hover:text-ink dark:text-sand-light/90 dark:hover:bg-white/5"
+                                  className="block rounded-lg px-6 py-2 text-sm text-ink/80 transition hover:bg-paper-light hover:text-ink dark:text-paper-light/90 dark:hover:bg-white/5"
                                 >
                                   {it.label}
                                 </Link>
@@ -218,7 +218,7 @@ export function MobileNav({ groups, ctaHref, ctaLabel }: { groups: NavGroup[]; c
                       <Link
                         href={g.href ?? '#'}
                         onClick={() => setOpen(false)}
-                        className="block rounded-xl px-4 py-3 font-display text-lg font-bold text-ink transition hover:bg-sand-light dark:text-sand-light dark:hover:bg-white/5"
+                        className="block rounded-xl px-4 py-3 font-display text-lg font-bold text-ink transition hover:bg-paper-light dark:text-paper-light dark:hover:bg-white/5"
                       >
                         {g.label}
                       </Link>
@@ -231,7 +231,7 @@ export function MobileNav({ groups, ctaHref, ctaLabel }: { groups: NavGroup[]; c
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-terracota px-5 py-3 text-sm font-semibold text-white transition hover:bg-terracota-dark"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-ink-400 dark:bg-paper-light dark:text-ink dark:hover:bg-paper-dark"
               >
                 {ctaLabel}
               </a>

@@ -4,11 +4,8 @@
 
 :root {
   color-scheme: light;
-  --color-ink: #012034;
-  --color-moss: #698461;
-  --color-ocre: #D99856;
-  --color-terracota: #B03E19;
-  --color-sand: #E5DBC0;
+  --color-ink: #0a0a0a;
+  --color-paper: #f5f5f5;
 }
 
 html {
@@ -24,7 +21,7 @@ html {
 }
 
 body {
-  @apply bg-white text-ink-700 antialiased transition-colors duration-300 dark:bg-ink dark:text-sand-light;
+  @apply bg-white text-ink-700 antialiased transition-colors duration-300 dark:bg-ink dark:text-paper-light;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
@@ -40,19 +37,19 @@ html.dark {
   }
 
   .heading-xl {
-    @apply font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl dark:text-sand-light;
+    @apply font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl dark:text-paper-light;
   }
 
   .heading-lg {
-    @apply font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-sand-light;
+    @apply font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-paper-light;
   }
 
   .heading-md {
-    @apply font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl dark:text-sand-light;
+    @apply font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl dark:text-paper-light;
   }
 
   .eyebrow {
-    @apply font-sans text-xs font-semibold uppercase tracking-[0.2em] text-terracota dark:text-ocre;
+    @apply font-sans text-xs font-semibold uppercase tracking-[0.2em] text-ink-400 dark:text-ink-200;
   }
 }
 
@@ -79,12 +76,12 @@ html.dark {
 
 /* Mapa do rodapé (MapLibre + estilo próprio em components/FooterMap.tsx) */
 .footer-map.maplibregl-map .maplibregl-ctrl.maplibregl-ctrl-attrib {
-  background: rgba(1, 32, 52, 0.6);
-  color: #5e7e92;
+  background: rgba(0, 0, 0, 0.6);
+  color: #8a8a8a;
   font-size: 10px;
 }
 .footer-map.maplibregl-map .maplibregl-ctrl-attrib a {
-  color: #8fa5b3;
+  color: #bdbdbd;
 }
 .footer-map.maplibregl-map .maplibregl-ctrl-attrib-button {
   filter: invert(0.7);
@@ -95,15 +92,15 @@ html.dark {
   width: 14px;
   height: 14px;
   border-radius: 9999px;
-  background: #d99856;
-  box-shadow: 0 0 0 4px rgba(217, 152, 86, 0.25), 0 0 24px 6px rgba(217, 152, 86, 0.35);
+  background: #f5f5f5;
+  box-shadow: 0 0 0 4px rgba(245, 245, 245, 0.25), 0 0 24px 6px rgba(245, 245, 245, 0.3);
 }
 .footer-map-pin::after {
   content: '';
   position: absolute;
   inset: -4px;
   border-radius: 9999px;
-  border: 1px solid rgba(217, 152, 86, 0.7);
+  border: 1px solid rgba(245, 245, 245, 0.7);
   animation: footer-map-ripple 2.8s ease-out infinite;
 }
 @keyframes footer-map-ripple {

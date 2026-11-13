@@ -10,8 +10,8 @@ export function GET() {
     .map(
       (p) => `<item>
 <title>${esc(p.title)}</title>
-<link>${SITE.url}/escritos/${p.slug}/</link>
-<guid>${SITE.url}/escritos/${p.slug}/</guid>
+<link>${SITE.url}/blog/${p.slug}/</link>
+<guid>${SITE.url}/blog/${p.slug}/</guid>
 <pubDate>${new Date(`${p.date}T00:00:00Z`).toUTCString()}</pubDate>
 <description>${esc(p.excerpt)}</description>
 </item>`,
@@ -21,7 +21,7 @@ export function GET() {
 <rss version="2.0"><channel>
 <title>${SITE.name}</title>
 <link>${SITE.url}/</link>
-<description>Filosofia, história, tecnologia e curiosidades.</description>
+<description>Textos, ideias e curiosidades.</description>
 <language>pt-BR</language>
 ${items}
 </channel></rss>`;

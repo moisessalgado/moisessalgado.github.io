@@ -1,8 +1,9 @@
 export const SITE = {
   name: 'Moises Salgado',
   url: 'https://moisessalgado.com.br',
+  tagline: 'Pindamonhangabense, pai de família e observador das coisas da vida.',
   description:
-    'Site pessoal de Moises Salgado: consultor em sensoriamento remoto e geoprocessamento, escrevendo sobre filosofia, história, tecnologia e curiosidades.',
+    'Site pessoal de Moises Salgado: pindamonhangabense, pai de família e observador das coisas da vida. Textos, ideias e curiosidades.',
   company: { name: 'Coordenada Geo', url: 'https://coordenadageo.com.br' },
   contact: {
     email: 'contato@moisessalgado.com.br',

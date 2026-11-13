@@ -1,8 +1,7 @@
 ---
 title: "Bem-vindo ao novo site"
-excerpt: "Este espaço deixa de ser um currículo e passa a ser um caderno público: filosofia, história, tecnologia e curiosidades."
+excerpt: "Este espaço deixa de ser um currículo e passa a ser um caderno público."
 date: "2026-11-03"
-tema: curiosidades
 ---
 
 ## Por que mudar
@@ -11,8 +10,6 @@ A versão anterior deste site repetia o que já está no LinkedIn. Currículo, e
 
 ## O que vem por aqui
 
-- **Filosofia** e **história**: leituras e ideias que me acompanham.
-- **Tecnologia**: o que aprendo construindo coisas.
-- **Curiosidades**: o que não cabe em nenhuma das anteriores.
+Textos, ideias e curiosidades de um pindamonhangabense, pai de família e observador das coisas da vida. Sem pauta fixa e sem categorias, por enquanto.
 
 O trabalho profissional continua na [Coordenada Geo](https://coordenadageo.com.br). Aqui é o lado pessoal.

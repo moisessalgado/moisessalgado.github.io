@@ -19,7 +19,7 @@ export default function ThemeToggle({ label = 'Alternar tema' }: { label?: strin
       aria-label={label}
       title={label}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 bg-white text-ink transition hover:border-terracota hover:text-terracota dark:border-white/15 dark:bg-white/5 dark:text-sand-light dark:hover:text-ocre"
+      className="relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 bg-white text-ink transition hover:border-ink hover:text-ink dark:border-white/15 dark:bg-white/5 dark:text-paper-light dark:hover:text-paper-light"
     >
       <Sun
         aria-hidden
