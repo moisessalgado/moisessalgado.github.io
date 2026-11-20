@@ -4,7 +4,6 @@ export const SITE = {
   tagline: 'Pindamonhangabense, pai de família e observador das coisas da vida.',
   description:
     'Site pessoal de Moises Salgado: pindamonhangabense, pai de família e observador das coisas da vida. Textos, ideias e curiosidades.',
-  company: { name: 'Coordenada Geo', url: 'https://coordenadageo.com.br' },
   contact: {
     email: 'contato@moisessalgado.com.br',
     linkedin: 'https://www.linkedin.com/in/moisessalgado/',

@@ -12,7 +12,7 @@ Components copied from there: `Button`, `Card`, `Section`, `ThemeProvider`, `The
 - Markdown posts via `gray-matter` + `next-mdx-remote`
 - Fonts: Comfortaa (display) and Urbanist (text); light/dark theme via `next-themes`
 - Palette: `ink` (black to gray) and `paper` (white to light gray) in `tailwind.config.ts`; there is no accent color
-- Portuguese at the root (`/`), English only for institutional pages (`/en/`: home, about, professional)
+- Single-page home (`/`: intro, about, latest posts) plus `/blog/` and one page per post; a short English page at `/en/`
 
 ## Develop
 
@@ -24,28 +24,32 @@ npm run preview  # serve ./out
 npm run lint
 ```
 
+## Site texts
+
+All fixed texts (intro, about, blog heading, "where I am") live in `content/site.md` (Portuguese) and
+`content/site.en.md` (English). Edit the Markdown and rebuild; keep the `## section` names and `key:` lines.
+
 ## Writing a post
 
-Create `content/blog/my-post.md`:
+1. Copy `content/blog/_modelo.md` to `content/blog/my-post.md` (files starting with `_` are ignored; the file name is the URL).
+2. Write it. `status: rascunho` keeps it private: it only shows in `npm run dev`, never in the build.
+3. When it is ready, publish it:
 
-```md
----
-title: "Title"
-excerpt: "One-line summary"
-date: "2026-11-03"        # quoted, YYYY-MM-DD
-tags: [optional, list]    # optional; shown on the post page
-draft: false              # drafts only show in `npm run dev`
----
-Text in Markdown.
+```bash
+npm run posts                              # list posts and status
+npm run posts -- publish my-post           # status: publicado
+npm run posts -- publish my-post --push    # ...and commit + push (deploys)
+npm run posts -- unpublish my-post         # back to draft
 ```
 
-There are no categories for now. At least one published (non-draft) post must exist, otherwise the static export fails.
+Do not use HTML comments (`<!-- -->`) in the post body: MDX does not accept them.
+With no published post the blog is empty and the site still builds.
 
 ## Structure
 
-- `app/` routes: `/`, `sobre`, `profissional`, `blog`, `blog/[slug]`, `en/*`, `rss.xml`
+- `app/` routes: `/`, `blog`, `blog/[slug]`, `en`, `rss.xml`
 - `components/` shared UI; `lib/` site data and blog reader
-- `content/` posts
+- `content/` site texts (`site*.md`) and posts (`blog/`)
 - `public/` static files, including `CNAME` (custom domain)
 - `brand/` logo source (`olho_A.png`) and `og.html` (Open Graph image source)
 

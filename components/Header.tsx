@@ -11,14 +11,12 @@ export default function Header({ locale, alt }: { locale: Locale; alt?: { pt: st
   const groups: NavGroup[] = pt
     ? [
         { label: 'Home', href: '/' },
-        { label: 'Sobre', href: '/sobre/' },
-        { label: 'Profissional', href: '/profissional/' },
-        { label: 'Blog', href: '/blog/' },
+        { label: 'Sobre', href: '/#sobre' },
+        { label: 'Blog', href: '/#blog' },
       ]
     : [
         { label: 'Home', href: '/en/' },
-        { label: 'About', href: '/en/about/' },
-        { label: 'Professional', href: '/en/professional/' },
+        { label: 'About', href: '/en/#sobre' },
         { label: 'Blog (PT)', href: '/blog/' },
       ];
   const cta = { href: `mailto:${SITE.contact.email}`, label: pt ? 'Contato' : 'Contact' };

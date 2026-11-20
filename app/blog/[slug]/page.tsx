@@ -11,7 +11,9 @@ import { formatDate, getPost, getPosts } from '@/lib/blog';
 type Params = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return getPosts().map((p) => ({ slug: p.slug }));
+  const slugs = getPosts().map((p) => ({ slug: p.slug }));
+  // Static export needs at least one route; with no published post, `_` renders a 404.
+  return slugs.length ? slugs : [{ slug: '_' }];
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
